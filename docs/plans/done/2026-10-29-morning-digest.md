@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-04
 ---
 
 # Morning digest
@@ -77,3 +78,21 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Digest contract: DigestRow type and readNight signature | — | claude-code · opus-5.5 · low | 2026-11-04 |
+| 2 | Run log reader | #1 | claude-code · opus-5.5 · low | 2026-11-04 |
+| 3 | Digest page: GET /digest/:night | #1 | claude-code · sonnet-5.5 · default | 2026-11-04 |
+| 4 | Digest JSON: GET /api/digest/:night | #1 | claude-code · sonnet-5.5 · default | 2026-11-04 |
+| 5 | Board link: each night to its digest | #1 | claude-code · sonnet-5.5 · default | 2026-11-04 |
+| 6 | Route tests for the digest page and JSON | #1 | claude-code · haiku-5.5 · default | 2026-11-04 |
+| 7 | Preview for review | #2, #3 | claude-code · opus-5.5 · low | 2026-11-04 |
+| 8 | Clean up: marker off, plan to done | #7, the review | claude-code · opus-5.5 · low | 2026-11-04 |
+
+#3 had a review fix (bec2eac: no empty cells). #7 was closed once before the reviewer looked and
+was reopened; it closed again when the review was in. The first preview host (Netlify) added a
+client script to the page, so the preview moved to Cloudflare Workers static assets. Version
+preview links were turned off there, because they kept the marked copy public.

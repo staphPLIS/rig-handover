@@ -37,7 +37,7 @@ export function DigestPage({ night }: { night: Night }) {
                 <td>{r.lastError ?? dash}</td>
                 <td>{r.firstAt}</td>
                 <td>{r.lastAt}</td>
-                <td>{marked(r) ? '⚠ marked' : ''}</td>
+                <td>{marked(r) ? '⚠ marked' : dash}</td>
               </tr>
             ))}
           </tbody>
